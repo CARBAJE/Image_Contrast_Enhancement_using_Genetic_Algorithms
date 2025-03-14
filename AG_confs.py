@@ -1,5 +1,5 @@
 import numpy as np
-from libs.functions import *
+from libs.auxiliaries_functions import create_functions_json, get_image_paths
 # ---------------------------
 # Parámetros del algoritmo
 # ---------------------------
@@ -28,26 +28,9 @@ MUTATION_PROB = 10.0 / 2  # Probabilidad de mutar cada gen
 ETA_MUT = 0.5                         # Índice de distribución para mutación polinomial
 
 # Ruta a la imagen a contrastar
-IMG_PATH = 'kodim23.png'
+IMG_PATH = get_image_paths('imgs')
 
 best_solutions_list = [] 
 all_runs_history = []  # Para graficar luego
 
-FUNCTIONS = {
-    "Entropy": {
-        "func": Entropy,
-        "lb": LB,
-        "ub": UB,
-        "name": "Entropy",
-        "num_runs": NUM_RUNS,
-        "img_path": IMG_PATH
-    },
-    "Std._Deviation": {
-        "func": std_img,
-        "lb": LB,
-        "ub": UB,
-        "name": "Standard_Deviation",
-        "num_runs": NUM_RUNS,
-        "img_path": IMG_PATH
-    }
-}
+FUNCTIONS = create_functions_json(IMG_PATH, LB, UB, NUM_RUNS)

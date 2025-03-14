@@ -4,7 +4,7 @@ from AG_confs import *
 
 from AG import genetic_algorithm
 from libs.plot import *
-from libs.functions import ImgRGB2Gray
+from libs.functions import ImgRGB2Gray, apply_sigmoid
 
 def main():
     # Crear carpetas de salida generales

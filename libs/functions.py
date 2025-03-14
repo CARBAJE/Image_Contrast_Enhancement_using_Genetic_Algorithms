@@ -40,6 +40,6 @@ def Entropy(img, X):
     img_new = apply_sigmoid(img, alpha, delta)
 
     hist, _ = np.histogram(img_new, bins=256, range=(0, 1), density=True)
-    hist = hist[hist > 0]  # Evita valores cero en el logaritmo
+    #hist = hist[hist > 0]  # Evita valores cero en el logaritmo
     
-    return - entropy(img_new, base=2) if hist.sum() > 0 else 0  # Evita NaN si histograma está vacío
+    return - entropy(hist, base=2) if hist.sum() > 0 else 0  # Evita NaN si histograma está vacío
