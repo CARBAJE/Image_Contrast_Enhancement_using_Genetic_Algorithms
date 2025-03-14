@@ -84,7 +84,7 @@ def plot_surface_3d(objective_func, lower_bound, upper_bound, best_solutions_lis
     plt.savefig(f"outputs/{func_key}/surface_3d_{func_key}.png")
     plt.show()
     
-def plotImg(img_og, img_result):
+def plotImg(img_og, img_result, func_key):
     fig, axes = plt.subplots(1, 2, figsize = (10, 5))
     
     axes[0].imshow(img_og)
@@ -95,4 +95,5 @@ def plotImg(img_og, img_result):
     axes[1].set_title("Imagen Transformada")
     axes[1].axis('off')
     
+    plt.savefig(f"outputs/{func_key}/surface_3d_{func_key}.png")
     plt.show()

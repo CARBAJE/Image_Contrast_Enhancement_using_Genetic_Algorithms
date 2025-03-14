@@ -108,7 +108,7 @@ def main():
         
         # (Opcional) Graficar evolución del fitness de todas las corridas
         img_best = apply_sigmoid(img_rgb, alpha=solutions_arr[min_index, 0], delta=solutions_arr[min_index, 1])
-        plotImg(img_rgb, img_best)
+        plotImg(img_rgb, img_best, func_key)
 
 if __name__ == "__main__":
     main()
